@@ -66,4 +66,3 @@ You can sort the data in ascending or descending order by clicking on the header
 
 # Important Note
 It is mandatory to provide array simple objects. Nested object will not work as colspan/rowspan has not been implemented. This component assumes the data to be string. If conversion needed, you might have to change the code. Let me know if help is needed.
-1 | 2 | 3
