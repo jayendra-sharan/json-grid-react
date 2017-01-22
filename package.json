@@ -1,0 +1,38 @@
+{
+  "name": "json-grid-react",
+  "version": "1.0.0",
+  "description": "Codebase for a react component to convert a JSON Object as a Table/Grid.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayendra-sharan/json-grid-react.git"
+  },
+  "keywords": [
+    "react",
+    "json",
+    "grid",
+    "table",
+    "react-component"
+  ],
+  "author": "Jayendra Sharan <jayendra.sharan@gmail.com> (http://jayendrasharan.in)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jayendra-sharan/json-grid-react/issues"
+  },
+  "homepage": "https://github.com/jayendra-sharan/json-grid-react#readme",
+
+  "devDependencies": {
+    "react-scripts": "0.8.5"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
