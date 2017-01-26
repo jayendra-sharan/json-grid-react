@@ -17,8 +17,8 @@ class JSONgrid extends Component {
 
   _init() {
     const { data } = this.props;
-    const header = this._createHeaderArry(data[0]);
-    const bodyArr = this._createBodyArr(data);
+    const header = this._createHeaderArry(data);
+    const bodyArr = this._createBodyArr(data, header);
     const originalData = bodyArr;
     this.setState({
       header,
@@ -33,23 +33,34 @@ class JSONgrid extends Component {
     this.update = this.update.bind(this);
   }
 
-  _createBodyArr(data) {
-    const bodyArr = [];
-    for (var index = 0; index < data.length; index ++) {
+  _createBodyArr(data, header) {
+
+    return data.reduce((acc, item) => {
       const bodyRow = [];
-      for (var prop in data[index]) {
-        if (prop) {
-          bodyRow.push(data[index][prop]);
+      for (var index = 0; index < header.length; index++) {
+        if (item.hasOwnProperty(header[index])) {
+          bodyRow.push(item[header[index]])
+        } else {
+          bodyRow.push('');
         }
       }
-      bodyArr.push(bodyRow)
-    }
-    return bodyArr;
+      acc.push(bodyRow);
+      return acc;
+    }, []);
   }
 
   _createHeaderArry(data) {
+
+    let maxCount = 0, maxIndex = 0;
+    for (var index = 0; index < data.length; index++) {
+      if (Object.keys(data[index]).length >= maxCount) {
+        maxCount = Object.keys(data[index]).length;
+        maxIndex = index;
+      }
+    }
+
     const arr = [];
-    for (var prop in data) {
+    for (var prop in data[maxIndex]) {
       if(prop) {
         arr.push(prop);
       }
